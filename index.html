@@ -36,7 +36,7 @@ function submit(){
             if(xml.split(document.getElementById('search').value).length>1){
 			    document.getElementById('ifs').innerHTML+='<iframe src=\"'+i+'\"> </iframe>';
             }
-        },'POST',i);
+        },'GET',i);
 	}
 }
 </script>
