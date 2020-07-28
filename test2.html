@@ -1,0 +1,41 @@
+<input id='search' required placeholder='Search...'>
+<button type='submit' onclick='submit();'>Search</button>
+<div id='ifs'></div>
+<script>
+function LXD(f1,meth,url)
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		// Code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			f1(xmlhttp.responseText);
+		}
+	}
+	xmlhttp.open(meth,url,true);
+	xmlhttp.send();
+}
+const ITER_FILES=[
+    
+]
+function submit(){
+    for(it in ITER_FILES) {
+	i=ITER_FILES[it]
+        LXD(function(xml){
+            if(xml.split(document.getElementById('search').value).length>1){
+			    document.getElementById('ifs').innerHTML+='<iframe src=\"'+i+'\"> </iframe>';
+            }
+        },'POST',i);
+	}
+}
+</script>
