@@ -35,7 +35,7 @@ function submit(){
 		i=ITER_FILES[it]
         LXD(function(xml){
             if(xml.split(document.getElementById('search').value).length>1){
-			    document.getElementById('ifs').innerHTML+='<iframe src=\"'+i+'\"> </iframe>';
+			    document.getElementById('ifs').innerHTML+='<iframe src=\"'+i+'\" width=\"1000\"> </iframe>';
             }
         },'GET',i);
 	}
