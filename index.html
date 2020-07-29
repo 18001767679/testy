@@ -32,10 +32,10 @@ const ITER_FILES=[
 function submit(){
 	document.getElementById('ifs').innerHTML='';
     for(it in ITER_FILES) {
-		i=ITER_FILES[it]
+	i=ITER_FILES[it]
         LXD(function(xml){
             if(xml.split(document.getElementById('search').value).length>1){
-			    document.getElementById('ifs').innerHTML+='<iframe src=\"'+i+'\" width=\"1000\"> </iframe>';
+				document.getElementById('ifs').innerHTML+='<iframe src=\"'+i+'\" width=\"1000\"> </iframe>';
             }
         },'GET',i);
 	}
