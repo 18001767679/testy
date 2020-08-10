@@ -1,0 +1,31 @@
+var Vec=function(x,y,z){
+	this.x=x;
+	this.y=y;
+	this.z=z;
+	this.mag=function(){
+		return Math.sqrt(this.x*this.x+this.y*this.y+this.z*this.z);
+	};
+	this.add=function(o){
+		this.x+=o.x;
+		this.y+=o.y;
+		this.z+=o.z;
+	};
+	this.sub=function(o){
+		this.x-=o.x;
+		this.y-=o.y;
+		this.z-=o.z;
+	};
+	this.mult=function(o){
+		this.x*=o;
+		this.y*=o;
+		this.z*=o;
+	};
+	this.div=function(o){
+		this.x/=o;
+		this.y/=o;
+		this.z/=o;
+	};
+	this.norm=function(o){
+		this.div(this.mag());
+	};
+};
